@@ -97,4 +97,22 @@ if __name__ == "__main__":
 ```
 The PredictPipeline class gets data from the form in the web app and is used to make predictions on the web app.
 ```python
+@app.route("/predictions", methods=["GET", "POST"])
+def make_prediction():
+    if request.method == "GET":
+        return render_template("predict.html")
+    
+    else:
+                
+        pipeline = PredictPipeline(age_band_of_driver = request.form.get("driver-age"),
+                                   driving_experience = request.form.get("driving-experience"),
+                                   defect_of_vehicle = request.form.get("vehicle-defect") ,
+                                   light_conditions = request.form.get("light-condition"),
+                                   number_of_vehicles_involved = request.form.get("no-of-vehicles-involved"),
+                                   cause_of_accident = request.form.get("cause-of-accident")
+                                   )
+                
+
+        result = pipeline.predict()[0]
+
 ```
