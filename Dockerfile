@@ -2,7 +2,7 @@ FROM python:3.11
 
 WORKDIR /app
 
-COPY ./requirements.txt /omdena-kenya-task-5-web-development/requirements.txt
+COPY ./requirements.txt /app
 
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
