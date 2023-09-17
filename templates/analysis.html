@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container analysis" id="analysis-page">
+    <div class="plot-container">
+        <figure class="plot-canvas">
+            <img src="static/images/hour.png" alt="plot-accident-hours" width="1489", height="789">
+            <figcaption>
+                <p>
+                    Accidents are more common between <time>3:00PM</time> to <time>6:00PM</time>
+                with <time>5:00PM</time> being the most common time when accidents occured.
+                </p>
+            </figcaption>
+        </figure>
+
+        <figure class="plot-canvas">
+            <img src="static/images/day_plot.png" alt="plot-accident-days" width="1489", height="789">
+            <figcaption>
+                <p>
+                    Accidents are more common during the week days especially on Wednesdays,
+                Thursdays and Fridays. Frdays see the most accidents occur.
+                </p>
+        </figure>
+
+        <figure class="plot-canvas">
+            <img src="static/images/sex_of_casualty.png" alt="plot-casualty-sex" width="1489", height="789">
+            <figcaption>
+                <figcaption>
+                    <p>
+                        Most of the casualties from road accidents are men.
+                    </p>
+                </figcaption>
+        </figure>
+
+        <figure class="plot-canvas">
+            <img src="static/images/sex_of_driver.png" alt="plot-driver-sex" width="1489", height="789">
+            <figcaption>
+                <p>
+                    Most of the drivers involved in road accidents are men.
+                </p>
+            </figcaption>
+        </figure>
+
+        <figure class="plot-canvas">
+            <img src="static/images/severity.png" alt="plot-driver-sex" width="1489", height="789">
+            <figcaption>
+                <p>
+                    Most of the accidents did not result in a fatal injury.
+                </p>
+            </figcaption>
+        </figure>
+    </div>
+</div>
+{% endblock %}

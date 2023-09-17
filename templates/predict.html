@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container predict" id="predict-page">
+    <form class="predict-form" action="{{url_for('make_prediction')}}" method="post">
+
+        <div class="select-container" id="vehicle-defect">
+            <div class="select-btn" type="button">
+                <span class="btn-text">No of Defects in Vehicle</span>
+                <i class='bx bxs-down-arrow'></i>
+            </div>
+
+            <div class="select-content">
+                <ul class="select-options">
+                    <li id="0">None</li>
+                    <li id="5">Not more than 5</li>
+                    <li id="7">More than 5</li>
+                </ul> 
+                <input type="text" class="text-input" name="vehicle-defect" value="" style="visibility: hidden;" required>    
+            </div>
+        </div>
+
+        <div class="select-container" id="driver-age">
+            <div class="select-btn" type="button">
+                <span>Age</span>
+                <i class='bx bxs-down-arrow'></i>
+            </div>
+
+            <div class="select-content">
+                <ul class="select-options">
+                    <li id="Under 18">Below 18</li>
+                    <li id="18-30">18 to 30 years old</li>
+                    <li id="31-50">31 to 50 years old</li>
+                    <li id="Over 51">Above 51 years old</li>
+                </ul>  
+                <input type="text" class="text-input" name="driver-age" value="" style="visibility: hidden;" required>
+                
+            </div>
+        </div>
+
+        <div class="select-container" id="light-condition">
+            <div class="select-btn" type="button">
+                <span>Lighting</span>
+                <i class='bx bxs-down-arrow'></i>
+            </div>
+
+            <div class="select-content">
+                <ul class="select-options">
+                    <li id="Daylight">Daylight</li>
+                    <li id="Darkness - lights lit">Darkness with lights on</li>
+                    <li id="Darkness - no lighting">Darkness with no lights on the road</li> 
+                    <li id="Darkness - lights unlit">Darkness with lights off</li>
+                </ul>  
+                <input type="text" class="text-input" name="light-condition" value="" style="visibility: hidden ;" required>
+                
+                
+            </div>
+        </div>
+
+        <div class="select-container" id="cause-of-accident">
+            <div class="select-btn" type="button">
+                <span>Cause Of Accident</span>
+                <i class='bx bxs-down-arrow'></i>
+            </div>
+
+            <div class="select-content">
+                <ul class="select-options">
+                    <li id="No priority to vehicle">No priority to vehicle</li>
+                    <li id="Driving under the influence of drugs">Driving under influence of drugs</li>
+                    <li id="Changing lane to the right">Changing lane to the right</li>
+                    <li id="Changing lane to the left">Changing lane to the left</li>
+                    <li id="No distancing">No distancing</li>
+                    <li id="Driving carelessly">Careless driving</li>
+                    <li id="Driving to the left">Driving to the left</li>
+                    <li id="Moving Backward">Moving backwards</li>
+                    <li id="No priority to pedestrian">No priority to pedestrian</li>
+                    <li id="Driving at high speed">Driving at high speed</li>
+                    <li id="Overtaking">Overtaking</li>
+                    <li id="Getting off the vehicle improperly">Getting off vehicle improperly</li>
+                    <li id="Turnover">Turnover</li>
+                    <li id="Overspeed">Driving above speed limit</li>
+                    <li id="Overturning">Overturning</li>
+                    <li id="Improper parking">Improper parking</li>
+                    <li id="Drunk driving">Drunk driving</li>
+                    <li id="Overloading">Overloading</li>
+                    <li id="Other">Other</li>
+                </ul> 
+                <input type="text" class="text-input" name="cause-of-accident" value="" style="visibility: hidden;" required> 
+                
+                
+            </div>
+        </div>
+
+        <div class="select-container" id="no-of-vehicles-involved">
+            <div class="select-btn" type="button">
+                <span>No of Vehicle Involved in Accidents</span>
+                <i class='bx bxs-down-arrow'></i>
+            </div>
+
+            <div class="select-content">
+                <ul class="select-options">
+                    <li id="1">1</li>
+                    <li id="2">2</li>
+                    <li id="3">3</li>
+                    <li id="4">4</li>
+                    <li id="6">6</li>
+                    <li id="7">7</li>
+                </ul> 
+                <input type="text" class="text-input" name="no-of-vehicles-involved" value="" style="visibility: hidden;" required> 
+                
+            </div>
+        </div>
+
+        <div class="select-container" id="driving-experience">
+            <div class="select-btn" type="button">
+                <span>Driver's Experience</span>
+                <i class='bx bxs-down-arrow'></i>
+            </div>
+
+            <div class="select-content">
+                <ul class="select-options">
+                    <li id="Below 1yr">Below 1 year</li>
+                    <li id="1-2yr">1 to 2 years</li>
+                    <li id="2-5yr">2 to 5 years</li>
+                    <li id="5-10yr">5 to 10 years</li>
+                    <li id="Above 10yr">Above 10 years</li>
+                    <li id="No Licence">No licence</li>
+                </ul> 
+                <input type="text" class="text-input" name="driving-experience" value="" style="visibility: hidden;" required>
+                
+            </div>
+        </div>
+
+
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    {% if result_p  %}
+        <div class="result-container">
+            <p class="result-text"> {{result_p}}</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
